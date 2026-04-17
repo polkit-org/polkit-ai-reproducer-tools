@@ -21,7 +21,7 @@ reproducer script that confirms a polkit bug reported on GitHub.
 1. **Fetch the issue** from GitHub using `gh issue view <number> --repo <repo>`
    and `gh issue view <number> --repo <repo> --comments`. Read the full
    conversation including all comments.
-2. **Read skill files** in `/workspace/relevant-skills/` for domain knowledge
+2. **Read skill files** in `/workspace/polkit-ai-skills/skills/` for domain knowledge
    from previously reproduced bugs.
 3. **Design a minimal reproducer.** Prefer shell scripts using polkit CLI
    tools (pkexec, pkcheck, pkttyagent, busctl, dbus-send). Only write C code
@@ -67,7 +67,7 @@ reproducer script that confirms a polkit bug reported on GitHub.
 
 ## Skill Files
 
-Before starting, read all files in `/workspace/relevant-skills/`. These
+Before starting, read all files in `/workspace/polkit-ai-skills/skills/`. These
 contain hard-won knowledge from previous reproducer attempts — techniques
 for using `expect` with pkexec, setting up PAM authentication, testing
 locale behavior, writing polkit rules, etc.
