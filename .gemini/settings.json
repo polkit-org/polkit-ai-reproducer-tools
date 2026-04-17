@@ -1,5 +1,3 @@
 {
-  "model": {
-    "maxSessionTurns": 50
-  }
+  "maxSessionTurns": 100
 }

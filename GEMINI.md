@@ -57,6 +57,14 @@ reproducer script that confirms a polkit bug reported on GitHub.
 - Do NOT use `set -u` — the container has minimal environment variables.
 - Do NOT start or restart dbus-daemon or polkitd — systemd manages them.
 - Do NOT modify system polkit packages (don't dnf/apt remove or upgrade).
+- **NEVER run `pkexec` directly** — it blocks waiting for interactive
+  password input and will hang forever. ALWAYS use `expect` to script
+  authentication, or wrap with `timeout 10 pkexec ...`. Same applies to
+  any command that triggers a polkit authentication prompt. See the
+  `pkexec/expect-authentication.md` skill file for the correct pattern.
+- **NEVER run interactive commands without a timeout.** Any command that
+  may block (pkexec, su, sudo, pkttyagent) MUST be wrapped with
+  `timeout <seconds>` or handled via `expect`.
 - Use `/etc/polkit-1/rules.d/` for custom JavaScript authorization rules
   if needed for testing.
 - Use the **distro-packaged polkit** unless the issue specifically references
