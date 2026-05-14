@@ -1,3 +1,6 @@
 {
-  "maxSessionTurns": 100
+  "maxSessionTurns": 100,
+  "security": {
+    "toolSandboxing": false
+  }
 }

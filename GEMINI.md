@@ -133,6 +133,11 @@ understand the bug in 10 seconds.
 
 ## Rules
 
+- **Use shell commands for system files.** The `write_file` and `read_file`
+  tools only work inside `/workspace`. For ANY file outside `/workspace`
+  (e.g. `/etc/`, `/usr/`, `/tmp/`, `/var/`), use shell commands instead:
+  `cat /etc/pam.d/polkit-1` to read, `bash -c 'cat > /path <<EOF ... EOF'`
+  or `tee /path <<EOF ... EOF` to write.
 - Do NOT use `set -u` — the container has minimal environment variables.
 - Do NOT start or restart dbus-daemon or polkitd — systemd manages them.
 - Do NOT modify system polkit packages (don't dnf/apt remove or upgrade).
