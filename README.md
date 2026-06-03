@@ -1,4 +1,4 @@
-# polkit AI Skills
+# polkit AI Reproducer Tools
 
 Skills and environments for AI-powered polkit issue triage and reproduction.
 
@@ -29,5 +29,5 @@ reproducing a specific class of polkit bug.
 ## Container images
 
 Pre-built images are available at:
-- `ghcr.io/vmihalko/polkit-ai-skills:fedora`
-- `ghcr.io/vmihalko/polkit-ai-skills:ubuntu`
+- `ghcr.io/polkit-org/polkit-ai-reproducer-tools:fedora`
+- `ghcr.io/polkit-org/polkit-ai-reproducer-tools:ubuntu`
