@@ -154,6 +154,16 @@ understand the bug in 10 seconds.
 - Use the **distro-packaged polkit** unless the issue specifically references
   a git commit, PR, or main-branch behavior. In that case, build from source
   at `/workspace/polkit-src/`.
+- **Migrated / old issues:** Many issues were bulk-imported from
+  freedesktop.org Bugzilla/GitLab (look for "bugzilla-migration" or
+  "gitlab.freedesktop.org" in the body). These often reference polkit
+  versions from 2011–2018. For such issues, **always build and test against
+  the current source** at `/workspace/polkit-src/` instead of the
+  distro-packaged version. The goal is to check whether the bug still exists
+  in the current codebase. If it does not reproduce with current HEAD,
+  report `success: false` and explain that the bug appears to be fixed.
+- **Do NOT ask old issue reporters for more info** — they filed the bug
+  years ago on a different tracker and will not respond on GitHub.
 - **NEVER** echo, print, log, or expose API keys or tokens
   (`GEMINI_API_KEY`, `GITHUB_TOKEN`).
 
