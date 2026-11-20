@@ -32,6 +32,12 @@ RUN dnf install -y \
     gobject-introspection-devel \
     && dnf clean all
 
+# Everything polkit's own build and test suite need (python3-dbusmock is used
+# by the unit tests), so a reproducer can build any polkit commit with -Dtests=true
+RUN dnf install -y python3-dbusmock \
+    && dnf builddep -y polkit \
+    && dnf clean all
+
 # General tools
 RUN dnf install -y \
     git \
